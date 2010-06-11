@@ -1,0 +1,8 @@
+*.pyc
+*.log
+*.swp
+*.bak
+*.db
+*.orig
+.DS_Store
+.hgignore

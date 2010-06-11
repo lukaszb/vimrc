@@ -1,0 +1,8 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/home/v3mpire/develop/workspace/_others/pythonpath/pagination/templates/pagination'
+let g:netrw_dirhist_2='/home/v3mpire/temp/storm/storm/django'
+let g:netrw_dirhist_3='/home/v3mpire/Download/pytaskplan-1.3.3/taskplan'
+let g:netrw_dirhist_4='/home/v3mpire/temp/fiz/Zadania'
+let g:netrw_dirhist_5='/home/v3mpire/develop/workspace/_others/richtemplates/.hg'
+let g:netrw_dirhist_6='/home/v3mpire/temp/avetsvn/barracuda/tags/production-2009-11-12'
