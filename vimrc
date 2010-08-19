@@ -58,7 +58,11 @@ set numberwidth=5
 :nmap <C-I> :execute 'NERDTreeMirror ' <CR> :vertical resize 50 <CR>
 :nmap <A-X> :execute 'NERDTreeMirror ' <CR> :vertical resize 50 <CR>
 :nmap <C-X> :execute 'NERDTreeMirror ' <CR> :vertical resize 50 <CR>
+:nmap <A-S> :execute 'NERDTreeFind' <CR>
+
 let NERDTreeIgnore=['\.vim$', '\~$', '\.pyc$', '\.orig', '\.swp\*']
+let NERDTreeHighlightCursorline=1
+"let NERDTreeQuitOnOpen=1
 "autocmd NERDTreeToggle
 
 "Python Project settings
@@ -80,6 +84,7 @@ autocmd FileType python set omnifunc=pythoncomplete#Complete
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType html set filetype=htmldjango " For SnipMate
+autocmd FileType *.json set filetype=json
 autocmd BufEnter *.html set ft=htmldjango
 autocmd BufEnter *.html source ~/.vim/scripts/closetag.vim
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
@@ -161,3 +166,9 @@ let g:fencview_autodetect = 1
 :au BufWinEnter *.py,*.txt,*.rst,*.c,*.cpp let w:m1=matchadd('Search', '\%<81v.\%>79v', -1)
 :au BufWinEnter *.py,*.txt,*.rst,*.c,*.cpp let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
 
+" Django surroundings
+let g:surround_{char2nr("b")} = "{% block\1 \r..*\r &\1%}\r{% endblock %}"
+let g:surround_{char2nr("i")} = "{% if\1 \r..*\r &\1%}\r{% endif %}"
+let g:surround_{char2nr("w")} = "{% with\1 \r..*\r &\1%}\r{% endwith %}"
+let g:surround_{char2nr("c")} = "{% comment\1 \r..*\r &\1%}\r{% endcomment %}"
+let g:surround_{char2nr("f")} = "{% for\1 \r..*\r &\1%}\r{% endfor %}"
