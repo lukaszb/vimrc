@@ -3,6 +3,7 @@ if exists("did_load_filetypes")
     finish
 endif
 augroup filetypedetect
-    au! BufRead,BufNewFile *.conf         setfiletype config
-    au! BufRead,BufNewFile *.config       setfiletype config
+    au! BufRead,BufNewFile *.conf         setf config
+    au! BufRead,BufNewFile *.config       setf config
+    au! BufRead,BufNewFile *.json         setf javascript
 augroup END
