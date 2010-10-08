@@ -21,7 +21,11 @@ set backspace=2
 set visualbell
 
 " Swap files
-" set backupdir="/tmp/"
+set backup 
+set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp 
+set backupskip=/tmp/*,/private/tmp/* 
+set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp 
+set writebackup
 
 " Niceness
 nnoremap ' `
@@ -80,7 +84,7 @@ let Tlist_WinWidth = 40
 
 "autocmd FileType python compiler pylint
 autocmd FileType python set omnifunc=pythoncomplete#Complete
-"autocmd FileType python set ft=python.django " For SnipMate
+autocmd FileType python set ft=python.django " For SnipMate
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType html set filetype=htmldjango " For SnipMate
@@ -105,7 +109,7 @@ endif
 :au Filetype html,xhtml,xml,xsl source ~/.vim/scripts/closetag.vim
 
 "MacVim specific
-"let Tlist_Ctags_Cmd='/opt/local/bin/ctags'
+let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
 
 "Searches
 "set hlsearch
@@ -172,3 +176,7 @@ let g:surround_{char2nr("i")} = "{% if\1 \r..*\r &\1%}\r{% endif %}"
 let g:surround_{char2nr("w")} = "{% with\1 \r..*\r &\1%}\r{% endwith %}"
 let g:surround_{char2nr("c")} = "{% comment\1 \r..*\r &\1%}\r{% endcomment %}"
 let g:surround_{char2nr("f")} = "{% for\1 \r..*\r &\1%}\r{% endfor %}"
+
+" Tasklist
+map <leader>v <Plug>TaskList
+
