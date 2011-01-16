@@ -5,7 +5,7 @@ set guioptions+=c
 set winaltkeys=no
 
 "Mac OS X
-set guifont=menlo:h15
+set guifont=menlo:h12
 set lines=55
 set columns=175
 
@@ -32,3 +32,8 @@ vmap <C-C> "+y
 "djvim() {
 "    gvim "+cd $1" "+TlistAddFilesRecursive . [^_]*py\|*html\|*css" +TlistOpen
 "}
+
+" Quickly edit/reload the vimrc file
+nmap <silent> <leader>gev :e $HOME/.gvimrc<CR>
+nmap <silent> <leader>gsv :so $HOME/.gvimrc<CR>
+

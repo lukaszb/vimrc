@@ -11,8 +11,14 @@ set softtabstop=4
 set shiftwidth=4
 set expandtab
 set autoindent
+set incsearch
 filetype plugin on
 filetype indent on
+let loaded_delimitMate=0
+
+"Spell checks
+setlocal spell spelllang=en_us
+set nospell
 
 "Backspace settings"
 set backspace=2
@@ -32,7 +38,7 @@ nmap <silent> <leader>n :silent :nohlsearch<CR>
 let g:EclimXmlValidate=0
 let g:FindMate_verbose = 'find'
 
-" Vimdiff settings
+" Vimdiff settings [for merges]
 nnoremap <Leader>u :diffupdate<CR>
 nnoremap <Leader>g :diffget<CR>
 nnoremap <Leader>p :diffput<CR>
@@ -175,4 +181,17 @@ let g:surround_{char2nr("f")} = "{% for\1 \r..*\r &\1%}\r{% endfor %}"
 
 " Tasklist
 map <leader>v <Plug>TaskList
+
+" Quickly edit/reload the vimrc file
+nmap <silent> <leader>ev :e $MYVIMRC<CR>
+nmap <silent> <leader>sv :so $MYVIMRC<CR>
+
+" Newest & nice
+set list
+set listchars=tab:>.,trail:.,extends:#,nbsp:.
+autocmd filetype html,xml set listchars-=tab:>.
+
+set pastetoggle=<F2>
+
+map <leader>t :FuzzyFinderTextMate<CR>
 
